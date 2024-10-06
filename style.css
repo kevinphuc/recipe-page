@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
 
+/* offline mode */
+@import url(/assets/fonts/outfit/Outfit-VariableFont_wght.ttf);
+@import url(/assets/fonts/young-serif/YoungSerif-Regular.ttf);
+
 :root {
     /* Colors */
     --white: hsl(0, 0%, 100%);
+
     --stone100: hsl(30, 54%, 90%);
     --stone150: hsl(30, 18%, 87%);
     --stone600: hsl(30, 10%, 34%);
@@ -32,4 +37,129 @@
 
 * {
     font-family: var(--outfit);
+}
+
+img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+body {
+    background-color: var(--stone100);
+
+    .content {
+        /* Position */
+        margin-left: calc(22.5%);
+        margin-top: calc(10%);
+        margin-bottom: calc(10%);
+
+        width: calc(50%);
+        border-radius: 25px;
+
+        padding: 2rem;
+
+        /* background and text color */
+        background-color: var(--white);
+        color: var(--stone600);
+    }
+
+    h1 {
+        color: var(--stone900);
+    }
+
+    h2 {
+        color: var(--brown800);
+    }
+}
+
+h1,
+h2 {
+    font-family: var(--young-serif);
+}
+
+.preparation-box {
+    background-color: var(--rose50);
+    border-radius: 10px;
+    padding: 0.5rem 1rem 0.5rem 1.5rem;
+
+    h3 {
+        color: var(--rose800);
+        font-weight: var(--font-bold);
+    }
+
+    li {
+        margin-left: -1rem;
+        padding: 0.5rem 0rem 0.5rem 1rem;
+    }
+}
+
+.ingredients,
+.instructions {
+    border-bottom: solid 0.1rem var(--stone150);
+
+    .ingredient,
+    .instruction {
+        margin-left: -1rem;
+        padding: 0.5rem 0rem 0.5rem 0.5rem;
+    }
+}
+
+.Calories,
+.Carbs,
+.Protein,
+.Fat {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: solid 0.1rem var(--stone150);
+
+    .unit {
+        color: var(--rose800);
+        font-weight: var(--font-bold);
+    }
+}
+
+.Fat {
+    border: hidden;
+}
+
+.attribution {
+    font-family: var(--outfit);
+    font-size: var(--paragraph);
+    text-align: center;
+
+    a {
+        color: var(--rose800);
+    }
+}
+
+@media screen and (max-width: 430px) {
+    img {
+        border-radius: 0;
+        width: 115%;
+        margin-top: -2rem;
+        margin-left: -2rem;
+        margin-right: auto;
+        padding: auto;
+    }
+
+    body {
+        .content {
+            border-radius: 0;
+            margin: -0.5rem -1rem -0.5rem -0.5rem;
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    img {
+        width: calc(120%);
+    }
+}
+
+@media screen and (max-width: 320px) {
+    img {
+        width: calc(125%);
+    }
 }

@@ -1,3 +1,4 @@
+/* online mode */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
 
@@ -41,26 +42,19 @@
 
 img {
     width: 100%;
-    border-radius: 15px;
+    border-radius: 1rem;
 }
 
 body {
     background-color: var(--stone100);
+    margin: 0;
 
     .content {
-        /* Position */
-        margin-left: calc(22.5%);
-        margin-top: calc(10%);
-        margin-bottom: calc(10%);
-
-        width: calc(50%);
-        border-radius: 25px;
-
         padding: 2rem;
-
-        /* background and text color */
+        border-radius: 2rem;
+        margin: 10% 25% 10% 25%;
+        align-items: center;
         background-color: var(--white);
-        color: var(--stone600);
     }
 
     h1 {
@@ -104,22 +98,53 @@ h2 {
     }
 }
 
-.Calories,
-.Carbs,
-.Protein,
-.Fat {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-bottom: solid 0.1rem var(--stone150);
-
-    .unit {
-        color: var(--rose800);
-        font-weight: var(--font-bold);
-    }
+li {
+    color: var(--stone600);
 }
 
-.Fat {
+.titles,
+.units {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.nutritions {
+    display: flex;
+    flex-direction: row;
+    margin-left: 0.25rem;
+}
+
+.units {
+    color: var(--brown800);
+    font-weight: var(--font-bold);
+}
+
+p.Calories,
+p.Carbs,
+p.Protein,
+p.Fat,
+p.unit {
+    padding-bottom: 0.5rem;
+    padding-left: 2rem;
+    margin-bottom: 0;
+}
+
+p.Calories,
+p.Carbs,
+p.Protein,
+p.Fat,
+p.description {
+    color: var(--stone600);
+}
+
+.border {
+    height: 0.1rem;
+    background-color: var(--stone150);
+}
+
+p.Fat,
+#last {
     border: hidden;
 }
 
@@ -133,33 +158,25 @@ h2 {
     }
 }
 
-@media screen and (max-width: 430px) {
-    img {
-        border-radius: 0;
-        width: 115%;
-        margin-top: -2rem;
-        margin-left: -2rem;
-        margin-right: auto;
-        padding: auto;
-    }
-
+/* Responsive design */
+@media (max-width: 480px) {
     body {
+        h1 {
+            font-weight: var(--font-normal);
+        }
+
         .content {
             border-radius: 0;
-            margin: -0.5rem -1rem -0.5rem -0.5rem;
-            width: 100%;
+            padding: 0;
+            margin: 0;
         }
-    }
-}
 
-@media screen and (max-width: 375px) {
-    img {
-        width: calc(120%);
-    }
-}
+        .recipe {
+            padding: 1rem;
+        }
 
-@media screen and (max-width: 320px) {
-    img {
-        width: calc(125%);
+        img {
+            border-radius: 0;
+        }
     }
 }
